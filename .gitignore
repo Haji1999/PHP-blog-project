@@ -1,0 +1,13 @@
+# Ignore XAMPP temp files
+*.log
+*.cache
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore vendor folder (if you use Composer or similar)
+/vendor/
+
+# Ignore environment configuration files
+.env

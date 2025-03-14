@@ -1,8 +1,17 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';
+    include 'config.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+?>
 
 <div class="container mt-4">
     <h1>Dashboard</h1>
     <hr>
+
+    <h2 class="mt-5">Welcome, <?php echo $_SESSION['user_name']; ?>!</h2>
 
     <h3>Your Posts</h3>
     <table class="table">

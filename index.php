@@ -1,6 +1,6 @@
 <?php 
 include 'header.php'; 
-include 'config.php';
+
 
 $query = "SELECT posts.id, posts.title, posts.content, users.name AS author, posts.created_at FROM posts
             JOIN users ON posts.user_id = users.id
@@ -16,9 +16,9 @@ $result = pg_query($conn, $query);
 
     <!-- Example blog post -->
     <div class="post-preview">
-        <?php while ($post = pg_fetch_assoc($result)) : ?>
+        <?php while ($post = pg_fetch_assoc($result)): ?>
 
-        <h2><a href="post.php?id=1"> <?php echo htmlspecialchars($post['title']); ?> </a></h2>
+        <h2> <?php echo htmlspecialchars($post['title']); ?> </a></h2>
 
         <p> <?php echo substr(htmlspecialchars($post['content']), 0, 150) . '......'; ?>  </p>
 
